@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  DOTNET_VERSION: "9.x"
+  DOTNET_VERSION: "8.x"
 
 jobs:
   build:
@@ -29,10 +29,10 @@ jobs:
         run: dotnet restore DevHabit.sln
 
       - name: Build
-        run: dotnet build DevHabit.sln --configuration Release --no-restore
+        run: dotnet build API/DevHabit/DevHabit.sln --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test DevHabit.sln --configuration Release --no-restore --no-build
+        run: dotnet test API/DevHabit/DevHabit.sln --configuration Release --no-restore --no-build
 
       - name: Publish
-        run: dotnet publish DevHabit.sln --configuration Release --no-restore --no-build
+        run: dotnet publish API/DevHabit/DevHabit.sln --configuration Release --no-restore --no-build
